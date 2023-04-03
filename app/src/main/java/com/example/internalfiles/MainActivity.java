@@ -20,15 +20,26 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+/**
+ * The type Main activity.
+ */
 public class MainActivity extends AppCompatActivity {
+
     Intent si;
     FileOutputStream fos;
+
     OutputStreamWriter osw;
+
     BufferedWriter bw;
+
     FileInputStream fis;
+
     InputStreamReader isr;
+
     BufferedReader br;
+
     String strrd;
+
     String line;
     EditText et;
     TextView tv;
@@ -93,6 +104,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Save.
+     *
+     * @param view the view
+     */
     public void save(View view) {
         String st = et.getText().toString();
         try {
@@ -146,6 +162,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Reset.
+     *
+     * @param view the view
+     */
     public void reset(View view) {
         tv.setText("");
         try {
@@ -158,7 +179,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-        public void exit(View view) {
+    /**
+     * Exit.
+     *
+     * @param view the view
+     */
+    public void exit(View view) {
         String st = et.getText().toString();
         try {
             fos = openFileOutput("test.txt",MODE_PRIVATE);
